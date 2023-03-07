@@ -100,3 +100,23 @@ export default {
   },
 };
 </script>
+
+
+/**
+  export const uploadAudio = async (questionID, data) => {
+    const formData = new FormData();
+    const blob = get(data, "blob");
+    const name = get(data, "id");
+    formData.append("content", blob, `${name}.mp3`);
+    formData.append("type", "3");
+    return api.post(
+      `${apiConstants.QUESTIONS}/${questionID}${apiConstants.ANSWER}/upload`,
+      formData,
+      {
+        headers: {
+          "Content-Type": `multipart/form-data; boundary=${data._boundary}`,
+        },
+      }
+    );
+  };
+*/
